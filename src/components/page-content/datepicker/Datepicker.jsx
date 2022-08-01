@@ -5,23 +5,21 @@ import { CustomTextField } from "../input/CustomTextField";
 import { useState } from "react";
 import { convertDateToTimestamp } from "../../../utils/Date";
 
-export default function Datepicker({style, label, onDatePicked}) {
+export default function Datepicker({style, label, onDatePicked, errorLabel, errorStyle}) {
   const [value, setValue] = useState(new Date());
-  
- 
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <DateTimePicker
         renderInput={(props) => (
           <CustomTextField
-            sx={{
+            sx={errorLabel !== ''?{m: 1, ...errorStyle}:{
               m: 1,
               ...style
             }}
             {...props}
           />
         )}
-        label={label}
+        label={errorLabel !== ''? errorLabel:label}
         value={value}
         onChange={(newValue) => {
           setValue(newValue)

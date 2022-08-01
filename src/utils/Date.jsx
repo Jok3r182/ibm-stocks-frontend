@@ -1,3 +1,4 @@
 export function convertDateToTimestamp(date){
-    return new Date(date).getTime()
+    const timestamp = new Date(date).getTime()
+    return timestamp
 }
