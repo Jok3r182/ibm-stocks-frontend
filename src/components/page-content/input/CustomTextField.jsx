@@ -3,7 +3,7 @@ import TextField from '@mui/material/TextField';
 import { secondary200, tertiary700 } from '../../../constants/Colors';
 export const CustomTextField = styled(TextField)({
     '& label.Mui-focused': {
-      color: secondary200,
+      color: tertiary700,
     },
     '& .MuiInput-underline:after': {
       borderBottomColor: secondary200,
@@ -20,21 +20,22 @@ export const CustomTextField = styled(TextField)({
       },
     },
     '& .MuiInputBase-input':{
-      color: secondary200
+      color: tertiary700,
     },
     '& .css-1sumxir-MuiFormLabel-root-MuiInputLabel-root':{
-      color: secondary200
+      color: tertiary700
     },
     "& label": {
-      color: secondary200
+      color: tertiary700
     },
     "&:hover fieldset": {
-      borderColor: secondary200,
+      borderColor: tertiary700,
     },
     "&.Mui-focused fieldset": {
-      borderColor: secondary200
+      borderColor: tertiary700
     },
     "& .MuiSvgIcon-root":{
-      color: tertiary700
-    }
+      color: tertiary700,
+    },
+    input:{backgroundColor: secondary200, color: tertiary700}
   });

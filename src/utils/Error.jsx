@@ -1,33 +1,32 @@
-export function checkInputField(input, setInputError){
-    const alphanumericRegex = /^[a-zA-Z ]+$/
-    
-    if(input.length === 0){
-        setInputError('Your input is empty')
-        return false
-    }
+export function checkInputField(input, setInputError) {
+  const alphanumericRegex = /^[a-zA-Z ]+$/;
 
-    if(!input.match(alphanumericRegex)){
-        setInputError('Your input contains numbers')
-        return false
-    }
-    
-    setInputError('')
-    return true
+  if (input.length === 0) {
+    setInputError("Your input is empty");
+    return false;
+  }
+
+  if (!input.match(alphanumericRegex)) {
+    setInputError("Your input contains numbers");
+    return false;
+  }
+
+  setInputError("");
+  return true;
 }
 
-export function checkDates(startDate, endDate, setStartDateError, setEndDateError){
-    if(startDate>endDate){
-        setStartDateError('Start date cant be newer than End date')
-        setEndDateError('End date cant be older than Start date')
-        return false
-    }
+export function checkResponseData(data, setInputError) {
+  if (Object.keys(data).length === 0) {
+    setInputError("Company doesnt exist");
+    return false;
+  }
+  return true;
+}
 
-    if(startDate===endDate){
-        setEndDateError('End date cant equal to Start date')
-        setStartDateError('Start date cant be equal to End date')
-        return false
-    }
-    setStartDateError("");
-    setEndDateError("");
-    return true
+export function checkIfArrayContainsElement(data, array, setInputError) {
+  if (array.filter((item) => item.name === data.name).length > 0) {
+    setInputError("Company already exists");
+    return false;
+  }
+  return true;
 }

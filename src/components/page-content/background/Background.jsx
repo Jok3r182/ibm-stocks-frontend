@@ -1,4 +1,5 @@
 import classes from "../background/Background.module.sass"
+import React from "react";
 const Background = props =>{
     return (
         <video className={classes.video} autoPlay loop muted>
