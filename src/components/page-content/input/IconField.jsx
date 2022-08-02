@@ -1,12 +1,13 @@
 import React from 'react'
 import { Box } from '@mui/system'
 import { CustomTextFieldIcon } from './CustomTextFieldIcon'
+import { IconFieldStyle } from './IconFieldStyle'
 
 function IconField({label, children}) {
   return (
-    <Box  sx={{width: '100%', display:"flex", alignItems: 'flex-end'}}>
+    <Box  sx={IconFieldStyle.item}>
         {children}
-        <CustomTextFieldIcon sx={{mx: 1, width: '100%'}} disabled label={label} variant="standard"/>
+        <CustomTextFieldIcon sx={IconFieldStyle.field} disabled label={label} variant="standard"/>
       </Box>
   )
 }

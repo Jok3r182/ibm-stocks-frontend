@@ -23,6 +23,21 @@ export function checkResponseData(data, setInputError) {
   return true;
 }
 
+function dateIsValid(date) {
+  return date instanceof Date && !isNaN(date);
+}
+
+export function checkDate(date, setDateError){
+
+ if(!dateIsValid(new Date(date)))
+ {
+  setDateError('Invalid Date')
+  return false
+ }
+ setDateError('')
+ return true
+}
+
 export function checkIfArrayContainsElement(data, array, setInputError) {
   if (array.filter((item) => item.name === data.name).length > 0) {
     setInputError("Company already exists");

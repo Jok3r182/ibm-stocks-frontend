@@ -1,41 +1,48 @@
 import { styled } from '@mui/material/styles';
 import TextField from '@mui/material/TextField';
-import { secondary200, tertiary700 } from '../../../constants/Colors';
+import { secondary300, tertiary700 } from '../../../constants/Colors';
 export const CustomTextField = styled(TextField)({
     '& label.Mui-focused': {
-      color: tertiary700,
+      color: 'white',
     },
     '& .MuiInput-underline:after': {
-      borderBottomColor: secondary200,
+      borderBottomColor: 'white',
     },
     '& .MuiOutlinedInput-root': {
       '& fieldset': {
-        borderColor: secondary200,
+        borderColor: 'white',
+        borderWidth: 2
       },
       '&:hover fieldset': {
-        borderColor: secondary200,
+        borderColor: 'white',
+        borderWidth: 2
+ 
       },
       '&.Mui-focused fieldset': {
-        borderColor: secondary200,
+        borderColor: 'white',
+        borderWidth: 2
       },
     },
     '& .MuiInputBase-input':{
-      color: tertiary700,
+      color: 'white',
     },
     '& .css-1sumxir-MuiFormLabel-root-MuiInputLabel-root':{
-      color: tertiary700
+      color: 'white'
     },
     "& label": {
-      color: tertiary700
+      color: 'white'
     },
     "&:hover fieldset": {
-      borderColor: tertiary700,
+      borderColor: 'white',
+      borderWidth: 2
     },
     "&.Mui-focused fieldset": {
-      borderColor: tertiary700
+      borderColor: 'white',
+      borderWidth: 2
     },
     "& .MuiSvgIcon-root":{
-      color: tertiary700,
+      color: secondary300,
+      
     },
-    input:{backgroundColor: secondary200, color: tertiary700}
+    input:{background: `linear-gradient(-90deg, ${tertiary700}, ${secondary300} 90%)`, color: 'white', borderRadius: 3}
   });

@@ -5,8 +5,9 @@ import { CustomTextField } from "../input/CustomTextField";
 import { useState } from "react";
 import { convertDateToTimestamp, dateManipulation } from "../../../utils/Date";
 import React from "react";
+import { CustomTextFieldErrorStyle } from "../input/CustomTextFieldErrorStyle";
 
-export default function Datepicker({style, label, onDatePicked, startDateConstraint, endDateConstraint}) {
+export default function Datepicker({style, label, onDatePicked, startDateConstraint, endDateConstraint, errorLabel}) {
   
   const [value, setValue] = useState(label==='Start Date'? dateManipulation(endDateConstraint, 'minus', 1) : new Date());
 
@@ -17,14 +18,14 @@ export default function Datepicker({style, label, onDatePicked, startDateConstra
         minDate={label==='End Date'? new Date(startDateConstraint) : new Date('1970-01-01')}
         renderInput={(props) => (
           <CustomTextField
-            sx={{
+            sx={errorLabel!==''? {m:1, ...CustomTextFieldErrorStyle} :{
               m: 1,
               ...style
             }}
             {...props}
           />
         )}
-        label={label}
+        label={errorLabel===''? label: errorLabel}
         value={value}
         onChange={(newValue) => {
           setValue(newValue)
