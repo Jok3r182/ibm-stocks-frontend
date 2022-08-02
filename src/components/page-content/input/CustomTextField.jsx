@@ -1,6 +1,6 @@
 import { styled } from '@mui/material/styles';
 import TextField from '@mui/material/TextField';
-import { secondary300, tertiary700 } from '../../../constants/Colors';
+import { secondary700, secondary600 } from '../../../constants/Colors';
 export const CustomTextField = styled(TextField)({
     '& label.Mui-focused': {
       color: 'white',
@@ -41,8 +41,8 @@ export const CustomTextField = styled(TextField)({
       borderWidth: 2
     },
     "& .MuiSvgIcon-root":{
-      color: secondary300,
+      color: 'white',
       
     },
-    input:{background: `linear-gradient(-90deg, ${tertiary700}, ${secondary300} 90%)`, color: 'white', borderRadius: 3}
+    input:{ color: 'white', borderRadius: 3}
   });

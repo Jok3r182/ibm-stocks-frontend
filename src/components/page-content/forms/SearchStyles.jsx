@@ -1,4 +1,4 @@
-import { primary500 } from "../../../constants/Colors";
+import { primary500, secondary700, secondary400 } from "../../../constants/Colors";
 
 export const SearchStyle = {
   formWrapper: {
@@ -12,6 +12,10 @@ export const SearchStyle = {
   fieldWrapper: {
     display: "flex",
     flexDirection: "column",
+    background: `linear-gradient(120deg,  ${secondary700}, ${secondary400})`,
+    boxShadow: "rgb(0, 0, 0) 0px 20px 30px -10px",
+    borderColor: "white",
+    borderRadius: 4
   },
   dateWrapper: { flexDirection: "row", display: "flex" },
   datepickerStyle:{

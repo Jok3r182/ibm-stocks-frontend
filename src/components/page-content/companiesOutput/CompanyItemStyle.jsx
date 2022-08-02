@@ -1,8 +1,8 @@
-import { tertiary700, secondary300 } from "../../../constants/Colors";
+import { secondary600, secondary700 } from "../../../constants/Colors";
 
 export const CompanyItemStyle = {
   itemStyle: {
-    background: `linear-gradient(120deg,  ${secondary300}, ${tertiary700})`,
+    background: `linear-gradient(120deg,  ${secondary700}, ${secondary600})`,
     border: 3,
     borderRadius: 4,
     minWidth: "30%",
