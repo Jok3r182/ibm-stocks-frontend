@@ -1,6 +1,5 @@
 import { styled } from '@mui/material/styles';
 import TextField from '@mui/material/TextField';
-import { secondary700, secondary600 } from '../../../constants/Colors';
 export const CustomTextField = styled(TextField)({
     '& label.Mui-focused': {
       color: 'white',

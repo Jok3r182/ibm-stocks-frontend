@@ -1,17 +1,7 @@
 import React from "react";
 import { Link, Modal } from "@mui/material";
 import { Box } from "@mui/system";
-
-const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 'auto',
-  backgroundColor: 'white',
-  boxShadow: 24,
-  p: 4,
-};
+import { CustomModalStyle } from "./CustomModalStyle";
 
 function CustomModal({buttonName, children, buttonStyle }) {
   const [open, setOpen] = React.useState(false);
@@ -34,7 +24,7 @@ function CustomModal({buttonName, children, buttonStyle }) {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box style={style}>{children}</Box>
+        <Box sx={CustomModalStyle.chartWrapper}>{children}</Box>
       </Modal>
     </>
   );

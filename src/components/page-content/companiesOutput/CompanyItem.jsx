@@ -12,7 +12,7 @@ function CompanyItem({ data }) {
 
   return (
     <Box sx={CompanyItemStyle.itemStyle}>
-      <CustomModal buttonName={data.name} buttonStyle={CompanyItemStyle.companyNameStyle}><CandleStickChart companyName={data.ticker}/></CustomModal>
+      <CustomModal buttonName={data.name} buttonStyle={CompanyItemStyle.companyNameStyle}><CandleStickChart companySymbol={data.ticker} companyName={data.name}/></CustomModal>
       <Box sx={CompanyItemStyle.itemWrapperStyle}>
         <Box sx={CompanyItemStyle.companyInformationWrapperStyle}>
           <IconField label={`Currency:\t${data.currency}`}>

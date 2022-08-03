@@ -7,6 +7,7 @@ import { CustomTextField } from "../input/CustomTextField";
 import { useState } from "react";
 import {
   checkDate,
+  checkDates,
   checkIfArrayContainsElement,
   checkInputField,
   checkResponseData,
@@ -27,13 +28,13 @@ function Search({ setCompanies, companies }) {
   const dateCtx = useContext(DateContext)
 
   function startDateHandler(date) {
-    if (checkDate(date, setStartDateError)) {
+    if (checkDate(date, setStartDateError) && checkDates(date, dateCtx.endDateState, setStartDateError, setEndDateError)) {
       dateCtx.setStartDate(date)
     }
   }
 
   function endDateHandler(date) {
-    if (checkDate(date, setEndDateError)) {
+    if (checkDate(date, setEndDateError) && checkDates(dateCtx.startDateState, date, setStartDateError, setEndDateError)) {
       dateCtx.setEndDate(date)
     }
   }

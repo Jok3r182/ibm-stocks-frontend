@@ -27,6 +27,31 @@ function dateIsValid(date) {
   return date instanceof Date && !isNaN(date);
 }
 
+export function checkDates(startDate, endDate, startDateError, endDateError){
+
+  if(startDate >= new Date().getTime()){
+    startDateError('Start Date is in the Future')
+    return false
+  }
+
+  if(endDate >= new Date().getTime()){
+    endDateError('End Date is in the Future')
+    return false
+  }
+
+  if(startDate >= endDate){
+    startDateError('Start Date too big')
+    endDateError('End Date too low')
+    return false
+  }
+
+  
+
+
+  return true
+
+}
+
 export function checkDate(date, setDateError){
 
  if(!dateIsValid(new Date(date)))
@@ -34,6 +59,7 @@ export function checkDate(date, setDateError){
   setDateError('Invalid Date')
   return false
  }
+
  setDateError('')
  return true
 }
