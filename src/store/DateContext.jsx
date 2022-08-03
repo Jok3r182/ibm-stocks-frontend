@@ -5,9 +5,10 @@ import { dateManipulation } from "../utils/Date";
 const DateContext = React.createContext();
 
 export const DateContextProvider = (props) => {
-
-const [startDate, setStartDate] = useState(dateManipulation(new Date().getTime(), 'minus', 1).getTime());
-const [endDate, setEndDate] = useState(new Date().getTime());
+  const [startDate, setStartDate] = useState(
+    dateManipulation(new Date().getTime(), "minus", 1).getTime()
+  );
+  const [endDate, setEndDate] = useState(new Date().getTime());
 
   const startDateHandler = (date) => {
     setStartDate(date);
@@ -21,7 +22,7 @@ const [endDate, setEndDate] = useState(new Date().getTime());
     startDateState: startDate,
     endDateState: endDate,
     setStartDate: startDateHandler,
-    setEndDate: endDateHandler
+    setEndDate: endDateHandler,
   };
 
   return (

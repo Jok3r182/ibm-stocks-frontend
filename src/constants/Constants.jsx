@@ -1,4 +1,14 @@
 export const inputFieldMaxLength = 35
 export const opacity = 0.92
-export const constChartScaleLower = 0.35
+export const constChartScaleLower = 0.45
 export const constChartScaleHigher = 0.75
+export const daysInMonthAvg = 30 
+export const hoursInDay = 24
+export const minutesInHour = 60
+export const minutesInHalfHour = 30
+export const minutesInFifteenMinutes = 15
+export const milisecondsInMinute = 3600
+export const amountOfDates = 6
+export const lgWidthBreakpoint = 1440
+export const mdWidthBreakpoint = 1200
+export const smWidthBreakpoint = 500

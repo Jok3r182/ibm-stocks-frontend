@@ -7,30 +7,59 @@ import Company from "../../../assets/lottie/company.json";
 import { CompanyItemStyle } from "./CompanyItemStyle";
 import CustomModal from "../modal/CustomModal";
 import CandleStickChart from "../chart/CandleStickChart";
+import useWindowDimensions from "../../../hooks/WindowDimensions";
+import {
+  lgWidthBreakpoint,
+  mdWidthBreakpoint,
+} from "../../../constants/Constants";
 
-function CompanyItem({ data }) {
+function CompanyItem({companyData }) {
+  const { width, height } = useWindowDimensions();
 
   return (
     <Box sx={CompanyItemStyle.itemStyle}>
-      <CustomModal buttonName={data.name} buttonStyle={CompanyItemStyle.companyNameStyle}><CandleStickChart companySymbol={data.ticker} companyName={data.name}/></CustomModal>
+      <CustomModal
+        buttonName={companyData.name}
+        buttonStyle={CompanyItemStyle.companyNameStyle}
+      >
+        <CandleStickChart companySymbol={companyData.ticker} companyName={companyData.name} />
+      </CustomModal>
       <Box sx={CompanyItemStyle.itemWrapperStyle}>
         <Box sx={CompanyItemStyle.companyInformationWrapperStyle}>
-          <IconField label={`Currency:\t${data.currency}`}>
+          <IconField
+            label={
+              width > mdWidthBreakpoint
+                ? `Currency:\t${companyData.currency}`
+                : companyData.currency
+            }
+          >
             <Payments sx={CompanyItemStyle.iconStyle} />
           </IconField>
-          <IconField label={`Country:\t${data.country}`}>
+          <IconField
+            label={
+              width > mdWidthBreakpoint
+                ? `Country:\t${companyData.country}`
+                : companyData.country
+            }
+          >
             <Flag sx={CompanyItemStyle.iconStyle} />
           </IconField>
-          <IconField label={`WebUrl: ${data.weburl}`}>
+          <IconField
+            label={
+              width > mdWidthBreakpoint ? `WebUrl: ${companyData.weburl}` : companyData.weburl
+            }
+          >
             <URL sx={CompanyItemStyle.iconStyle} />
           </IconField>
         </Box>
-        <Lottie
-          style={CompanyItemStyle.lottieAnimationStyle}
-          animationData={Company}
-          autoPlay={true}
-          loop={true}
-        />
+        {width > lgWidthBreakpoint && (
+          <Lottie
+            style={CompanyItemStyle.lottieAnimationStyle}
+            animationData={Company}
+            autoPlay={true}
+            loop={true}
+          />
+        )}
       </Box>
     </Box>
   );

@@ -9,14 +9,11 @@ import { SearchStyle } from "../components/page-content/forms/SearchStyles";
 function SearchPage() {
   const { height, width } = useWindowDimensions();
   const [companies, setCompanies] = useState([]);
- 
 
   return (
-    <Box
-      sx={{ height: height, ...SearchStyle.searchPageWrapper}}
-    >
-     <Search setCompanies={setCompanies} companies={companies}/>
-      <CompanyList items={companies} />
+    <Box sx={{ height: height, ...SearchStyle.searchPageWrapper }}>
+      <Search setCompanies={setCompanies} companies={companies} />
+      <CompanyList companies={companies} />
     </Box>
   );
 }

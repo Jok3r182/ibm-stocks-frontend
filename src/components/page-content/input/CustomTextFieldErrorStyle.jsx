@@ -1,35 +1,36 @@
 import { errorColor } from "../../../constants/Colors";
 
-export const CustomTextFieldErrorStyle = { '& label.Mui-focused': {
+export const CustomTextFieldErrorStyle = {
+  "& label.Mui-focused": {
     color: errorColor,
   },
-  '& .MuiInput-underline:after': {
+  "& .MuiInput-underline:after": {
     borderBottomColor: errorColor,
   },
-  '& .MuiOutlinedInput-root': {
-    '& fieldset': {
+  "& .MuiOutlinedInput-root": {
+    "& fieldset": {
       borderColor: errorColor,
     },
-    '&:hover fieldset': {
+    "&:hover fieldset": {
       borderColor: errorColor,
     },
-    '&.Mui-focused fieldset': {
+    "&.Mui-focused fieldset": {
       borderColor: errorColor,
     },
   },
-  '& .MuiInputBase-input':{
-    color: errorColor
+  "& .MuiInputBase-input": {
+    color: errorColor,
   },
-  '& .css-1sumxir-MuiFormLabel-root-MuiInputLabel-root':{
-    color: errorColor
+  "& .css-1sumxir-MuiFormLabel-root-MuiInputLabel-root": {
+    color: errorColor,
   },
   "& label": {
-    color: errorColor
+    color: errorColor,
   },
   "&:hover fieldset": {
     borderColor: errorColor,
   },
   "&.Mui-focused fieldset": {
-    borderColor: errorColor
+    borderColor: errorColor,
   },
-  }
+};

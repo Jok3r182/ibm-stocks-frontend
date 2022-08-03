@@ -3,7 +3,7 @@ import { Link, Modal } from "@mui/material";
 import { Box } from "@mui/system";
 import { CustomModalStyle } from "./CustomModalStyle";
 
-function CustomModal({buttonName, children, buttonStyle }) {
+function CustomModal({ buttonName, children, buttonStyle }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);

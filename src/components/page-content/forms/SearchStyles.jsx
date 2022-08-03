@@ -1,4 +1,8 @@
-import { primary500, secondary700, secondary400 } from "../../../constants/Colors";
+import {
+  primary500,
+  secondary700,
+  secondary400,
+} from "../../../constants/Colors";
 import { opacity } from "../../../constants/Constants";
 
 export const SearchStyle = {
@@ -9,7 +13,7 @@ export const SearchStyle = {
     flex: 1,
     justifyContent: "center",
     alignItems: "flex-end",
-    opacity: opacity
+    opacity: opacity,
   },
   fieldWrapper: {
     display: "flex",
@@ -17,11 +21,12 @@ export const SearchStyle = {
     background: `linear-gradient(120deg,  ${secondary700}, ${secondary400})`,
     boxShadow: "rgb(0, 0, 0) 0px 20px 30px -10px",
     borderColor: "white",
-    borderRadius: 4
+    borderRadius: 4,
   },
   dateWrapper: { flexDirection: "row", display: "flex" },
-  datepickerStyle:{
-    display: "flex", flexGrow: 1
+  datepickerStyle: {
+    display: "flex",
+    flexGrow: 1,
   },
   buttonStyle: {
     m: 1,
@@ -34,12 +39,12 @@ export const SearchStyle = {
     border: 2,
     borderColor: "white",
   },
-  searchPageWrapper:{
+  searchPageWrapper: {
     display: "flex",
     flex: 1,
     flexGrow: 1,
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-  }
+  },
 };

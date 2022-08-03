@@ -4,14 +4,14 @@ import { Box } from "@mui/material";
 import useWindowDimensions from "../../../hooks/WindowDimensions";
 import { CompanyListStyle } from "./CompanyListStyle";
 
-function CompanyList({ items }) {
-  const {width, height} = useWindowDimensions()
+function CompanyList({ companies }) {
+  const { width, height } = useWindowDimensions();
   return (
     <Box
-      sx={ {maxHeight: height / 2, maxWidth: width, ...CompanyListStyle.list}}
+      sx={{ maxHeight: height / 2, maxWidth: width, ...CompanyListStyle.list }}
     >
-      {items.map((item) => (
-        <CompanyItem key={item.name} data={item} />
+      {companies.map((item) => (
+        <CompanyItem key={item.name} companyData={item} />
       ))}
     </Box>
   );

@@ -1,3 +1,13 @@
+import {
+  daysInMonthAvg,
+  hoursInDay,
+  minutesInFifteenMinutes,
+  minutesInHalfHour,
+  minutesInHour,
+  milisecondsInMinute,
+  amountOfDates,
+} from "../constants/Constants";
+
 export function convertDateToTimestamp(date) {
   const timestamp = new Date(date).getTime();
   return timestamp;
@@ -11,8 +21,8 @@ export function dateManipulation(date, method, value) {
   return startDate;
 }
 
-export function convertTimestampToSeconds(date){
-  return date/1000
+export function convertTimestampToSeconds(date) {
+  return Math.round(date / 1000);
 }
 
 export function checkResolution(startDate, endDate) {
@@ -21,27 +31,27 @@ export function checkResolution(startDate, endDate) {
   const hours = minutes / 60;
   const day = timeMargin / 8.64e7;
 
-  if (day > 50) {
+  if (day > (daysInMonthAvg * amountOfDates) / 2) {
     return "M";
   }
 
-  if (hours > 50) {
+  if (hours > hoursInDay * amountOfDates) {
     return "D";
   }
 
-  if (minutes > 240) {
+  if (minutes > minutesInHour * amountOfDates) {
     return "60";
   }
 
-  if (minutes > 120) {
+  if (minutes > minutesInHalfHour * amountOfDates) {
     return "30";
   }
 
-  if (minutes > 60) {
+  if (minutes > minutesInFifteenMinutes * amountOfDates) {
     return "15";
   }
 
-  if (timeMargin > 360000) {
+  if (timeMargin > milisecondsInMinute * amountOfDates) {
     return "1";
   }
 }
