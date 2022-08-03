@@ -7,3 +7,8 @@ export async function fetchCompanyData(companyName) {
   return response.data
 
 }
+
+export async function fetchCompanyStockData(companyName, startDate, endDate){
+  const response = await axios.get(`https://finnhub.io/api/v1/stock/candle?symbol=${companyName}&resolution=D&from=${startDate}&to=${endDate}&token=${API_KEY}`)
+  return response.data
+}

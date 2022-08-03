@@ -1,4 +1,5 @@
 import { primary500, secondary700, secondary400 } from "../../../constants/Colors";
+import { opacity } from "../../../constants/Constants";
 
 export const SearchStyle = {
   formWrapper: {
@@ -8,6 +9,7 @@ export const SearchStyle = {
     flex: 1,
     justifyContent: "center",
     alignItems: "flex-end",
+    opacity: opacity
   },
   fieldWrapper: {
     display: "flex",

@@ -15,24 +15,26 @@ import { CustomTextFieldErrorStyle } from "../input/CustomTextFieldErrorStyle";
 import { inputFieldMaxLength } from "../../../constants/Constants";
 import { fetchCompanyData } from "../../../utils/Http";
 import { SearchStyle } from "./SearchStyles";
+import { useContext } from "react";
+import DateContext from "../../../store/DateContext";
+import { dateManipulation } from "../../../utils/Date";
 
 function Search({ setCompanies, companies }) {
   const [startDateError, setStartDateError] = useState("");
   const [endDateError, setEndDateError] = useState("");
   const [inputValue, setInputValue] = useState("");
   const [inputError, setInputError] = useState("");
-  const [startDate, setStartDate] = useState(new Date().getTime());
-  const [endDate, setEndDate] = useState(new Date().getTime());
+  const dateCtx = useContext(DateContext)
 
   function startDateHandler(date) {
     if (checkDate(date, setStartDateError)) {
-      setStartDate(date);
+      dateCtx.setStartDate(date)
     }
   }
 
   function endDateHandler(date) {
     if (checkDate(date, setEndDateError)) {
-      setEndDate(date);
+      dateCtx.setEndDate(date)
     }
   }
 
@@ -67,17 +69,21 @@ function Search({ setCompanies, companies }) {
         />
         <Box sx={SearchStyle.dateWrapper}>
           <Datepicker
+            maxDate = {dateManipulation(dateCtx.endDateState, 'minus', 1)}
+            minDate = {new Date('1970-01-01')}
             onDatePicked={startDateHandler}
+            date = {dateCtx.startDateState}
             label="Start Date"
             style={SearchStyle.datepickerStyle}
-            endDateConstraint={endDate}
             errorLabel={startDateError}
           />
           <Datepicker
+            maxDate = {new Date()}
+            minDate = {dateManipulation(dateCtx.startDateState, 'sum', 1)}
             onDatePicked={endDateHandler}
             label="End Date"
+            date = {dateCtx.endDateState}
             style={SearchStyle.datepickerStyle}
-            startDateConstraint={startDate}
             errorLabel={endDateError}
           />
         </Box>

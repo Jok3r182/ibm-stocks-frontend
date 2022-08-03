@@ -1,22 +1,18 @@
 import React from "react";
 import { Box } from "@mui/system";
-import { Link } from "@mui/material";
 import { Payments, Flag, Link as URL } from "@mui/icons-material";
 import IconField from "../input/IconField";
 import Lottie from "lottie-react";
 import Company from "../../../assets/lottie/company.json";
 import { CompanyItemStyle } from "./CompanyItemStyle";
+import CustomModal from "../modal/CustomModal";
+import CandleStickChart from "../chart/CandleStickChart";
 
 function CompanyItem({ data }) {
+
   return (
     <Box sx={CompanyItemStyle.itemStyle}>
-      <Link
-        sx={CompanyItemStyle.companyNameStyle}
-        color="inherit"
-        href="/chart"
-      >
-        {data.name}
-      </Link>
+      <CustomModal buttonName={data.name} buttonStyle={CompanyItemStyle.companyNameStyle}><CandleStickChart companyName={data.ticker}/></CustomModal>
       <Box sx={CompanyItemStyle.itemWrapperStyle}>
         <Box sx={CompanyItemStyle.companyInformationWrapperStyle}>
           <IconField label={`Currency:\t${data.currency}`}>

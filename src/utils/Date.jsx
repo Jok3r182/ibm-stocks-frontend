@@ -8,3 +8,7 @@ export function dateManipulation(date, method, value){
   startDate.setDate(method === 'sum'? startDate.getDate() + value : startDate.getDate()- value);
   return startDate
 }
+
+export function convertToSeconds(date){
+  return Math.ceil(date/1000)
+}
