@@ -1,7 +1,6 @@
 import React from "react";
 import { Box } from "@mui/system";
 import { Payments, Flag, Link as URL } from "@mui/icons-material";
-import IconField from "../input/IconField";
 import Lottie from "lottie-react";
 import Company from "../../../assets/lottie/company.json";
 import { CompanyItemStyle } from "./CompanyItemStyle";
@@ -10,10 +9,10 @@ import CandleStickChart from "../chart/CandleStickChart";
 import useWindowDimensions from "../../../hooks/WindowDimensions";
 import {
   lgWidthBreakpoint,
-  mdWidthBreakpoint,
 } from "../../../constants/Constants";
+import CompanyItemBody from "./CompanyItemBody";
 
-function CompanyItem({companyData }) {
+function CompanyItem({ companyData }) {
   const { width, height } = useWindowDimensions();
 
   return (
@@ -22,35 +21,32 @@ function CompanyItem({companyData }) {
         buttonName={companyData.name}
         buttonStyle={CompanyItemStyle.companyNameStyle}
       >
-        <CandleStickChart companySymbol={companyData.ticker} companyName={companyData.name} />
+        <CandleStickChart
+          companySymbol={companyData.ticker}
+          companyName={companyData.name}
+        />
       </CustomModal>
       <Box sx={CompanyItemStyle.itemWrapperStyle}>
         <Box sx={CompanyItemStyle.companyInformationWrapperStyle}>
-          <IconField
-            label={
-              width > mdWidthBreakpoint
-                ? `Currency:\t${companyData.currency}`
-                : companyData.currency
-            }
-          >
-            <Payments sx={CompanyItemStyle.iconStyle} />
-          </IconField>
-          <IconField
-            label={
-              width > mdWidthBreakpoint
-                ? `Country:\t${companyData.country}`
-                : companyData.country
-            }
-          >
-            <Flag sx={CompanyItemStyle.iconStyle} />
-          </IconField>
-          <IconField
-            label={
-              width > mdWidthBreakpoint ? `WebUrl: ${companyData.weburl}` : companyData.weburl
-            }
-          >
-            <URL sx={CompanyItemStyle.iconStyle} />
-          </IconField>
+          <CompanyItemBody
+            company={[
+              {
+                name: "Currency",
+                value: companyData.currency,
+                icon: <Payments sx={CompanyItemStyle.iconStyle} />,
+              },
+              {
+                name: "Country",
+                value: companyData.country,
+                icon: <Flag sx={CompanyItemStyle.iconStyle} />,
+              },
+              {
+                name: "WebUrl",
+                value: companyData.weburl,
+                icon: <URL sx={CompanyItemStyle.iconStyle} />,
+              },
+            ]}
+          />
         </Box>
         {width > lgWidthBreakpoint && (
           <Lottie
