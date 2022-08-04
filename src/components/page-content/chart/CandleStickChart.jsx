@@ -2,7 +2,7 @@ import { Box, CircularProgress } from "@mui/material";
 import React from "react";
 import DateContext from "../../../store/DateContext";
 import { useContext, useState, useEffect, useCallback } from "react";
-import { fetchCompanyStockData } from "../../../utils/Http";
+import { fetchCompanyStockData, logCompanyStocks } from "../../../utils/Http";
 import Chart from "react-apexcharts";
 import useWindowDimensions from "../../../hooks/WindowDimensions";
 import {
@@ -38,6 +38,7 @@ function CandleStickChart({ companyName, companySymbol }) {
     );
     setStocks(stocks);
     setLoading(false);
+    logCompanyStocks(companySymbol, stocks)
   }, [companySymbol, dateCtx.startDateState, dateCtx.endDateState]);
 
   const options = {

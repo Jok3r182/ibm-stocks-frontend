@@ -34,3 +34,22 @@ export async function fetchCompanyStockData(
   }
   return stocks;
 }
+
+
+export function logCompanyName(companyName){
+ 
+  const data = {
+    name: companyName,
+    date: new Date()
+  }
+  axios.post('http://localhost:8080/company/name', data)
+}
+
+export function logCompanyStocks(company, stocks){
+  const data  ={
+    name: company,
+    stocks: stocks,
+    date: new Date()
+  }
+  axios.post('http://localhost:8080/company/stocks', data)
+}

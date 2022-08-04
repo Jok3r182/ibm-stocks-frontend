@@ -14,7 +14,7 @@ import {
 } from "../../../utils/Error";
 import { CustomTextFieldErrorStyle } from "../input/CustomTextFieldErrorStyle";
 import { inputFieldMaxLength } from "../../../constants/Constants";
-import { fetchCompanyData } from "../../../utils/Http";
+import { fetchCompanyData, logCompanyName } from "../../../utils/Http";
 import { SearchStyle } from "./SearchStyles";
 import { useContext } from "react";
 import DateContext from "../../../store/DateContext";
@@ -63,7 +63,9 @@ function Search({ setCompanies, companies }) {
         setCompanies((companies) => [...companies, data]);
       }
       setLoading(false);
+      logCompanyName(inputValue)
     }
+    
   }
 
   return (
