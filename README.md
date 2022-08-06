@@ -1,7 +1,7 @@
 # IBM technical assignment frontedn
 
 This project is a one part of IBM technical assignment. 
-It's purpose is let user search and retrieve companies stock prices, and
+It's purpose is to let user search and retrieve companies stock prices, and
 show them in the diagram on tile name press.
 
 You can access hosted website here: 
