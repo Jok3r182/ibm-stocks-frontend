@@ -2,5 +2,7 @@
     "appService.zipIgnorePattern": [
         "node_modules{,/**}",
         ".vscode{,/**}"
-    ]
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/2fad552a-d033-43e6-bc63-ee2bc748985a/microsoft.web/sites/subscriptions/2fad552a-d033-43e6-bc63-ee2bc748985a/resourceGroups/appsvc_linux_centralus_basic/providers/Microsoft.Web/sites/ibmappfrontend",
+    "appService.deploySubpath": "."
 }
