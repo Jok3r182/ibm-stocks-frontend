@@ -8,12 +8,12 @@ export default {
     component: CandleStickChart,
     decorators: [withReactContext({
         Context: DateContext,
-        initialState: {startDateState: "1657102342000", endDateState: "1657447942000"}
+        initialState: {startDateState: 1657102342000, endDateState: 1657447942000}
       }),],
     parameters: {
         docs: {
           description: {
-            component: 'Components purpose is to render chart diagram when user clicks it and fetch data from an API point',
+            component: 'CandleStickCharts purpose is to render a chart diagram when user clicks it and fetch data from an API point',
           },
         },
       },

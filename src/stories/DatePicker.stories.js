@@ -6,7 +6,7 @@ export default {
     parameters: {
         docs: {
           description: {
-            component: 'Components purpose is to render start and end date datepickers (use dark background)',
+            component: 'DatePicker purpose is to render start and end date datepickers (p.s. use dark background)',
           },
         },
       },
@@ -25,15 +25,15 @@ export default {
           },
         },
         maxDate: {
-            description: 'Date picker maximum date',
+            description: 'Date picker maximum date in timestamp miliseconds',
         control: {
-            type: 'string',
+            type: 'number',
           },
         },
         minDate: {
-            description: 'Date picker minimum date',
+            description: 'Date picker minimum date in timestamp miliseconds',
         control: {
-            type: 'string',
+            type: 'number',
           },
         },
         errorLabel: {
@@ -43,9 +43,9 @@ export default {
           },
         },
         date: {
-            description: 'Date picker current date',
+            description: 'Date picker current date in timestamp miliseconds',
         control: {
-            type: 'string',
+            type: 'number',
           },
         },
        

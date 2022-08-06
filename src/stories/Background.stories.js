@@ -6,7 +6,7 @@ export default {
     parameters: {
         docs: {
           description: {
-            component: 'Components purpose is to render background behind other components',
+            component: 'Backgrounds purpose is to render chosen background behind other components',
           },
         },
       },

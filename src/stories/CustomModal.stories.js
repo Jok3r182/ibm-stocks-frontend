@@ -5,7 +5,7 @@ export default {
     parameters: {
         docs: {
           description: {
-            component: 'A button that opens a modal dialog',
+            component: 'CustomModal purpose is to add button to a component, that will open a modal dialog',
           },
         },
       },
@@ -18,7 +18,7 @@ export default {
           },
         },
         buttonStyle: {
-            description: 'Button custom style',
+            description: 'Button custom style (sx)',
             control: {
                 type: 'object',
               },

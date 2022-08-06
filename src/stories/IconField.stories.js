@@ -6,7 +6,7 @@ export default {
     parameters: {
         docs: {
           description: {
-            component: 'Components purpose is to render one of the company data items e. g. name (use dark background)',
+            component: 'IconField purpose is to render one of the company data items e. g. name (p.s. use dark background)',
           },
         },
       },

@@ -6,16 +6,16 @@ export default {
     title: "Company List",
     decorators: [withReactContext({
         Context: DateContext,
-        initialState: {startDateState: "1657102342000", endDateState: "1657447942000"}
+        initialState: {startDateState: 1657102342000, endDateState: 1657447942000}
       }),],
     parameters: {
         docs: {
           description: {
-            component: 'Components purpose is to render companyItems with company information',
+            component: 'CompanyList purpose is to render CompanyItem components with company information: name, currency, country, weburl (p.s. pressing on company name will open a stock diagram)',
           },
         },
       },
-    component: "CompanyList",
+    component: CompanyList,
     argTypes: {
         companies: {
           description: 'Companies is a list which consists of company items',
@@ -59,6 +59,6 @@ SimpleCompanyList.args =
         "phone": "12129691000.0",
         "shareOutstanding": 102.889,
         "ticker": "AB",
-        "weburl": ""
+        "weburl": "https://www.alliancebernstein.com/corporate/en/home.html"
     }
 ]}

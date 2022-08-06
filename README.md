@@ -15,9 +15,10 @@ You can access hosted website here:
 
 ## Documentation
 
+You can find Storybook component documentation by running these commands: 
 
-
+1. npx storybook init
+2. npm run storybook
 
 ## Authors
-
 - [@Matas Paulius Drėgva](https://github.com/Jok3r182)
