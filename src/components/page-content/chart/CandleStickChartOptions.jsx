@@ -27,7 +27,7 @@ export const additionalOptions = {
     type: "category",
     labels: {
       formatter: function (val) {
-        return dayjs(val).format("YYYY MMM DD HH:mm");
+        return dayjs(val).format("MMM DD HH:mm");
       },
     },
   },

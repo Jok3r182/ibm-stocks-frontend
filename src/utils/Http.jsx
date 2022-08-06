@@ -1,6 +1,8 @@
 import axios from "axios";
 
 const API_KEY = "cbkes6aad3if45782ol0";
+const BACKEND_URL = "https://ibmappbackend.azurewebsites.net"
+//"http://localhost:8080"
 
 export async function fetchCompanyData(companyName) {
   const response = await axios.get(
@@ -42,7 +44,7 @@ export function logCompanyName(companyName){
     name: companyName,
     date: new Date()
   }
-  axios.post('http://localhost:8080/company/name', data)
+  axios.post(`${BACKEND_URL}/company/name`, data)
 }
 
 export function logCompanyStocks(company, stocks){
@@ -51,5 +53,6 @@ export function logCompanyStocks(company, stocks){
     stocks: stocks,
     date: new Date()
   }
-  axios.post('http://localhost:8080/company/stocks', data)
+ 
+  axios.post(`${BACKEND_URL}/company/stocks`, data)
 }

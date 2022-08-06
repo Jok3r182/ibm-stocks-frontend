@@ -6,6 +6,7 @@ import { CompanyListStyle } from "./CompanyListStyle";
 
 function CompanyList({ companies }) {
   const { width, height } = useWindowDimensions();
+  console.log(companies)
   return (
     <Box
       sx={{ maxHeight: height / 2, maxWidth: width, ...CompanyListStyle.list }}
