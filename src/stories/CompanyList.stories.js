@@ -18,7 +18,7 @@ export default {
     component: "CompanyList",
     argTypes: {
         companies: {
-          description: 'companies is a list which consists of company items',
+          description: 'Companies is a list which consists of company items',
           control: {
             type: 'array',
           },
