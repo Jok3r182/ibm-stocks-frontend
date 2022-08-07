@@ -17,7 +17,7 @@ You can access hosted website here: http://20.236.206.205/home
 
 You can find Storybook component documentation by running these commands: 
 
-1. npx storybook init
+1. npm install -f
 2. npm run storybook
 
 ## Authors
