@@ -1,4 +1,4 @@
-# IBM technical assignment frontedn
+# IBM technical assignment frontend
 
 This project is a one part of IBM technical assignment. 
 It's purpose is to let user search and retrieve companies stock prices, and
