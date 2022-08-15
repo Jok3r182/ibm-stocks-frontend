@@ -1,6 +1,6 @@
 # IBM technical assignment frontend
 
-This project is a frond-end part of IBM technical assignment. 
+This project is a front-end part of IBM technical assignment. 
 It's purpose is to let user search and retrieve companies stock prices, and
 show them in the diagram on tile name press.
 
