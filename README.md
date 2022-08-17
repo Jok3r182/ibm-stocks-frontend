@@ -4,7 +4,7 @@ This project is a front-end part of IBM technical assignment.
 It's purpose is to let user search and retrieve companies stock prices, and
 show them in the diagram on tile name press.
 
-You can access hosted website here: http://20.236.206.205/home
+You can access hosted website here: http://20.109.234.254/home
 
 ## Running an app
 
